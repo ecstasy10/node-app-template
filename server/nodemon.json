@@ -1,0 +1,12 @@
+{
+  "restartable": "rs",
+  "ignore": ["*DAO.js"],
+  "ext": "js,json",
+  "env": {
+    "IS_DB_SYNC_ACTIVE": "false"
+  },
+  "watch": [
+    "api/",
+    "core/"
+  ]
+}
