@@ -1,5 +1,5 @@
 {
-  "name": "[PROJECT_NAME]",
+  "name": "TestProject",
   "version": "1.0.0",
   "description": "Coded with <3 by dbalboa",
   "main": "core",
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Papuaa-app/[PROJECT_NAME].git"
+    "url": "git+https://github.com/Papuaa-app/TestProject.git"
   },
   "author": "David Balboa Rojo",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Papuaa-app/[PROJECT_NAME]/issues"
+    "url": "https://github.com/Papuaa-app/TestProject/issues"
   },
-  "homepage": "https://github.com/Papuaa-app/[PROJECT_NAME]#readme",
+  "homepage": "https://github.com/Papuaa-app/TestProject#readme",
   "pre-commit": [
     "lint:fix"
   ],

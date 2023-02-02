@@ -1,32 +1,32 @@
 version: '3.5'
 services:
-  [PROJECT_NAME]-db:
+  TestProject-db:
     platform: linux/x86_64 # Comment that line if processor it's not Apple's Silicon
     image: postgres:15
-    container_name: [PROJECT_NAME]-db
+    container_name: TestProject-db
     ports:
       - '5432:5432'
     volumes:
-      - ${HOME}/docker-volumes/[PROJECT_NAME]-db/data:/var/lib/postgresql/data
+      - ${HOME}/docker-volumes/TestProject-db/data:/var/lib/postgresql/data
     #      - ./data/db:/docker-entrypoint-initdb.d
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - PGDATA=/var/lib/postgresql/data/db-files/
     networks:
-      - [PROJECT_NAME]-network
-  [PROJECT_NAME]-cache:
+      - TestProject-network
+  TestProject-cache:
     image: bitnami/redis:6.2.1
-    container_name: [PROJECT_NAME]-cache
+    container_name: TestProject-cache
     ports:
       - '6379:6379'
     volumes:
-      - ${HOME}/docker-volumes/[PROJECT_NAME]-cache/data:/bitnami/redis/data
+      - ${HOME}/docker-volumes/TestProject-cache/data:/bitnami/redis/data
     environment:
       - REDIS_PASSWORD=redis
     networks:
-      - [PROJECT_NAME]-network
+      - TestProject-network
 networks:
-  [PROJECT_NAME]-network:
+  TestProject-network:
     external: false
-    name: [PROJECT_NAME]-network
+    name: TestProject-network

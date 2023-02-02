@@ -63,13 +63,13 @@ export default class SessionService {
     return { accessToken: token , tokenType: 'Bearer', user };
   }
 
-  async register (newUser, isAdmin) {
+  async register (newUser) {
     const userExists = await this.userService.get({ email: newUser.email });
     if (userExists) {
       this.logger.error(`User with email ${newUser.email} already exists in DB`);
       return Promise.reject({ statusCode: this.httpStatusCodes.UNAUTHORIZED, data: [ { i18nKey: 'user.alreadyExists' } ] });
     }
-    newUser.profileId = isAdmin ? this.config.admin.profileId : this.config.user.profileId;
+    newUser.profileId = this.config.user.defaultProfileId;
     const user = await this.userService.create(newUser);
     const passDecrypted = await this._decryptPass(newUser.password);
     const seed = this.crypto.createHash('sha256').update(`${user._id}${this.config.security.salt}`, 'utf8').digest('base64');

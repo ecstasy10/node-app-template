@@ -31,9 +31,4 @@ export default class UserService {
     return endpoints;
   }
 
-  async getHotelGroups (userId) {
-    const hotelGroups = await this.userRepository.findHotelGroups(userId);
-    return hotelGroups;
-  }
-
 }

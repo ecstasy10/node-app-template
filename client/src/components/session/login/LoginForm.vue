@@ -1,13 +1,13 @@
 <template>
   <v-text-field
     v-model="modelValue.email"
-    :label="$t('admin.session.form.email')"
+    :label="$t('form.email')"
     :rules="[ validation.required ]"
     required
   />
   <v-text-field
     v-model="modelValue.password"
-    :label="$t('admin.session.form.password')"
+    :label="$t('form.password')"
     :rules="[ validation.required ]"
     outlined
     type="password"

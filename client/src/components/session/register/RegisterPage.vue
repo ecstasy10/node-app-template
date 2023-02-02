@@ -15,7 +15,7 @@
               class="text-white"
               v-html="$t('session.register.bgTitle')"
             />
-            <h4 class="text-white">
+            <h4 class="text-white mt-4">
               {{ $t('session.register.bgSubtitle') }}
             </h4>
           </div>
@@ -44,9 +44,6 @@
                   width="10em"
                   :src="appLogo"
                 />
-              </div>
-              <div class="mt-2">
-                {{ $t('session.register.motivationalPhrase') }}
               </div>
             </div>
             <v-card
@@ -84,7 +81,7 @@
               <v-card-text>
                 <div
                   class="mouse-click"
-                  @click="goTo('AdminLogin')"
+                  @click="goTo('Login')"
                 >
                   {{ $t('session.register.redirectLogin') }}
                 </div>
@@ -99,7 +96,7 @@
 
 <script>
 import RegisterForm from '@/components/session/register/RegisterForm';
-import favicon from '@/assets/logos/FAVICON.svg';
+import favicon from '@/assets/logos/FAVICON.png';
 import appLogo from '@/assets/logos/svg/logo-no-background.svg';
 import { mapActions, mapState } from 'pinia';
 import { useSessionStore } from '@/store/session';
@@ -138,7 +135,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../../../styles/styles.scss";
+@import "../../../styles/styles.scss";
 
 .r-ml {
  margin-left: 5vw;
@@ -161,6 +158,7 @@ export default {
   z-index: 1;
   content:"";
   position: absolute;
+  background-color: white;
   height: 130vh;
   width: 20%;
   top: -10em;

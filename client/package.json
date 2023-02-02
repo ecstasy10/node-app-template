@@ -1,7 +1,7 @@
 {
-  "name": "[PROJECT_NAME]",
+  "name": "TestProject",
   "author": "David Balboa <https://github.com/ecstasy10>",
-  "description": "[PROJECT_NAME] app project",
+  "description": "TestProject app project",
   "version": "0.0.1",
   "private": true,
   "scripts": {

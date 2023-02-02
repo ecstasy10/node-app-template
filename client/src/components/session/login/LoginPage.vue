@@ -19,7 +19,7 @@
               <div>
                 <v-img
                   width="10em"
-                  :src="logoPapuaa"
+                  :src="appLogo"
                 />
               </div>
             </div>
@@ -31,7 +31,7 @@
             >
               <v-card-title class="d-flex justify-space-between">
                 <div>
-                  {{ $t('admin.session.login.title') }}
+                  {{ $t('session.login.title') }}
                 </div>
                 <v-avatar>
                   <v-img :src="favicon" />
@@ -52,15 +52,15 @@
                   color="secondary"
                   type="submit"
                 >
-                  {{ $t('admin.session.login.submit') }}
+                  {{ $t('session.login.submit') }}
                 </v-btn>
               </div>
               <v-card-text>
                 <div
                   class="mouse-click"
-                  @click="goTo('AdminRegister')"
+                  @click="goTo('Register')"
                 >
-                  {{ $t('admin.session.login.redirectRegister') }}
+                  {{ $t('session.login.redirectRegister') }}
                 </div>
               </v-card-text>
             </v-card>
@@ -72,9 +72,9 @@
 </template>
 
 <script>
-import LoginForm from '@/components/admin/session/login/LoginForm.vue';
-import favicon from '@/assets/logos/FAVICON.svg';
-import logoPapuaa from '@/assets/logos/LOGO_PAPUAA.svg';
+import LoginForm from '@/components/session/login/LoginForm.vue';
+import favicon from '@/assets/logos/FAVICON.png';
+import appLogo from '@/assets/logos/svg/logo-no-background.svg';
 import FormErrors from '@/components/form/FormErrors.vue';
 import { goTo } from '@/composables/router';
 import form from '@/mixins/form';
@@ -88,10 +88,10 @@ export default {
   data () {
     return {
       favicon,
-      logoPapuaa,
+      appLogo,
       loginForm: {
-        email: 'david@papuaa.com',
-        password: 'Gssaosamm7',
+        email: undefined,
+        password: undefined,
       }
     };
   },

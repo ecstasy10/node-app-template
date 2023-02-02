@@ -1,25 +1,25 @@
 <template>
   <v-text-field
     v-model="modelValue.name"
-    :label="$t('session.form.name')"
+    :label="$t('form.name')"
     :rules="[ validation.required ]"
     required
   />
   <v-text-field
     v-model="modelValue.surname"
-    :label="$t('session.form.surname')"
+    :label="$t('form.surname')"
     :rules="[ validation.required ]"
     required
   />
   <v-text-field
     v-model="modelValue.email"
-    :label="$t('session.form.email')"
+    :label="$t('form.email')"
     :rules="[ validation.required ]"
     required
   />
   <v-text-field
     v-model="modelValue.password"
-    :label="$t('session.form.password')"
+    :label="$t('form.password')"
     :rules="[ validation.required ]"
     outlined
     type="password"

@@ -80,7 +80,7 @@ class SessionController {
   async register (req, res, next) {
     try {
       const newUser = req.body;
-      await this.sessionService.register(newUser, false);
+      await this.sessionService.register(newUser);
       res.status(this.httpStatusCodes.OK).json(this.responses(undefined, this.formatter.requestEntity(req)));
       // TODO
       // trackingService.track({ user, req, trackingInfo: [ { kpiId: 2 }, { kpiId: 1002 } ] });
@@ -89,35 +89,6 @@ class SessionController {
       const { statusCode = this.httpStatusCodes.INTERNAL_SERVER_ERROR, data } = err;
       res.status(statusCode).json(this.responses(data, this.formatter.requestEntity(req)));
       // TODO
-      // trackingService.track({
-      //   user: null,
-      //   req,
-      //   trackingInfo: [
-      //     {
-      //       kpiId: 50002,
-      //       description: `Error de local register al usuario ${req.body.email}`,
-      //     }, {
-      //       kpiId: 51002,
-      //       description: `Error de local register al usuario ${req.body.email}`,
-      //     }
-      //   ]
-      // });
-    } finally {
-      next();
-    }
-  }
-
-  async adminRegister (req, res, next) {
-    try {
-      const newUser = req.body;
-      await this.sessionService.register(newUser, true);
-      res.status(this.httpStatusCodes.OK).json(this.responses(undefined, this.formatter.requestEntity(req)));
-      // TODO
-      // trackingService.track({ user, req, trackingInfo: [ { kpiId: 2 }, { kpiId: 1002 } ] });
-    } catch (err) {
-      this.logger.error('login', err);
-      const { statusCode = this.httpStatusCodes.INTERNAL_SERVER_ERROR, data } = err;
-      res.status(statusCode).json(this.responses(data, this.formatter.requestEntity(req)));
       // trackingService.track({
       //   user: null,
       //   req,

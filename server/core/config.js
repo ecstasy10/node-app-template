@@ -84,4 +84,7 @@ module.exports = {
       level: process.env.GRAYLOG_LEVEL,
     }
   },
+  user: {
+    defaultProfileId: process.env.DEFAULT_USER_PROFILE_ID,
+  },
 };
